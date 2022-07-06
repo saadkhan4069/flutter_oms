@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medicalfqpixel/pages/home_page.dart';
 import 'package:medicalfqpixel/pages/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medicalfqpixel/utils/routes.dart';
 
 void main() {
   runApp(const myApp());
@@ -14,6 +15,7 @@ class myApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         // home: homePage(),
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
             primarySwatch: Colors.deepPurple,
             fontFamily: GoogleFonts.lato().fontFamily,
@@ -23,8 +25,8 @@ class myApp extends StatelessWidget {
         initialRoute: "/",
         routes: {
           "/": (context) => loginPage(),
-          "/login": (context) => loginPage(),
-          "/home": (context) => homePage()
+          myRoute.loginroute: (context) => loginPage(),
+          myRoute.homeroute: (context) => homePage()
         });
   }
 }
